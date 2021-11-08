@@ -11,26 +11,58 @@
   <body>
     <!-- Should have one container a page (Bootstrap)-->
     <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
 
-          <h1>Col 2</h1>
+      <!-- Empty row -->
+      <div class="row">
+        <div class="col-1 ml-0">
         </div>
-        <div class="col-4">
-          <h1>Col 3</h1>
+        <div class="col-1"></div>
         </div>
+
+      <!-- Task Planner Information (Name, description, assigned, date)-->
+      </div>
+      <div class="row">
+        <div class="col-1 ml-0">
+          <label for="username">Name:</label>
+        </div>
+        <div class="col-1"></div>
+          <input type="text" name="planner" id="username">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <label for="description">Description:</label>
+        </div>
+        <div class="col-1"></div>
+          <input type="text" name="planner" id="description">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <label for="assigned-to">Assigned To:</label>
+        </div>
+        <div class="col-1"></div>
+          <input type="text" name="planner" id="assigned-to">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <label for="due-date">Date:</label>
+        </div>
+        <div class="col-1"></div>
+          <input type="date" name="planner" id="due-date">
+        </div>
+
+      </div>
+      <!-- Task Planner Submit button -->
+      <div class="row ml-1">
+        
+        <input type="submit" id="form">
+
       </div>
     </div>
 
+    <!-- Boostrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="script.js"></script>
   </body>
