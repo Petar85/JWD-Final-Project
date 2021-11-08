@@ -12,6 +12,13 @@
     <!-- Should have one container a page (Bootstrap)-->
     <div class="container">
 
+      <!-- Jumbotron Header -->
+      <!--
+      <div class="jumbotron">
+        <h1 class="display-4">Task Planner</h1>
+      </div>
+      -->
+
       <!-- Empty row -->
       <div class="row">
         <div class="col-1 ml-0">
@@ -23,7 +30,7 @@
       </div>
       <div class="row">
         <div class="col-1 ml-0">
-          <label for="username">Name:</label>
+          <label for="username"><span class="planner-text">Name:</span></label>
         </div>
         <div class="col-1"></div>
           <input type="text" name="planner" id="username">
@@ -31,7 +38,7 @@
       </div>
       <div class="row">
         <div class="col-1">
-          <label for="description">Description:</label>
+          <label for="description"><span class="planner-text">Description:</span></label>
         </div>
         <div class="col-1"></div>
           <input type="text" name="planner" id="description">
@@ -39,7 +46,7 @@
       </div>
       <div class="row">
         <div class="col-1">
-          <label for="assigned-to">Assigned To:</label>
+          <label for="assigned-to"><span class="planner-text">Assigned To:</span></label>
         </div>
         <div class="col-1"></div>
           <input type="text" name="planner" id="assigned-to">
@@ -47,7 +54,7 @@
       </div>
       <div class="row">
         <div class="col-1">
-          <label for="due-date">Date:</label>
+          <label for="due-date"></label><span class="planner-text">Date:</label>
         </div>
         <div class="col-1"></div>
           <input type="date" name="planner" id="due-date">
@@ -56,10 +63,24 @@
       </div>
       <!-- Task Planner Submit button -->
       <div class="row ml-1">
-        
         <input type="submit" id="form">
-
       </div>
+
+      <!-- Cards -->
+      <!--
+      <div class="row">
+        <div class="card m-5" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+      -->
+      
     </div>
 
     <!-- Boostrap -->
