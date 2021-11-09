@@ -11,6 +11,7 @@ h1 {
     text-align: center;
     background-color: rgba(22, 250, 174, 0.993);
     border-radius: 30px;
+    opacity: .74;
 }
 
 h5 {
