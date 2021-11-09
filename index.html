@@ -1,15 +1,126 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>replit</title>
+    <title>Task Planner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
+
   <body>
-    <h1>Hello World!!</h1>
-    <h1>Hello World!!</h1>
-    <h1>Hello World!!</h1>
+    <div class="container">
+        <div class="header">
+          <!-- Just an image -->
+              <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                  <img src="/assets/GenerationLogo.png" width="100px" height="35px" alt="">
+                </a>
+                <ul>
+                  <li class="nav-item"><a href="about-us.html">About us</a></li>
+                </ul>
+              </nav>
+          <div class="jumbotron">
+            <h1 class="display-3">Task  Planner</h1>
+            <p class="lead">This is a simple task planner created by using Bootstrap and Javascript</p>
+            <!-- <hr class="my-4"> -->
+          </div>
+
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="Description">
+          </div>
+          <div class="form-group">
+            <label for="assignedTo">Assigned To: </label>
+            <input type="text" class="form-control" id="assignedTo" placeholder="Assigned To:">
+          </div>
+          <div class="form-group">
+            <label for="dueDate">Due Date</label>
+            <input type="text" class="form-control" id="dueDate" placeholder="Due Date">
+          </div>
+          <div class="form-group">
+            <label for="status">Status</label>
+            <input type="text" class="form-control" id="status" placeholder="Status">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <!-- Card Section -->
+
+        <!-- Card 1 -->
+        <div class="card-tasks">
+          <h1 class="display-4"></h1>      
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Task 1</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card One</h6>
+              <p class="card-text">Example text to build on the card title.</p>
+              <span class="badge badge-pill badge-success">Success</span>
+              <button type="button" class="btn btn-outline-primary">Primary</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Task 2</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card Two</h6>
+              <p class="card-text">Example text to build on the card title..</p>
+              <span class="badge badge-pill badge-success">Success</span>
+              <button type="button" class="btn btn-outline-primary">Primary</button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Task 3</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card Three</h6>
+              <p class="card-text">Example text to build on the card title..</p>
+              <span class="badge badge-pill badge-success">Success</span>
+              <button type="button" class="btn btn-outline-primary">Primary</button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Task 4</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card Four</h6>
+              <p class="card-text">Example text to build on the card title..</p>
+              <span class="badge badge-pill badge-success">Success</span>
+              <button type="button" class="btn btn-outline-primary">Primary</button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Task 5</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card Five</h6>
+              <p class="card-text">Example text to build on the card title..</p>
+              <span class="badge badge-pill badge-success">Success</span>
+              <button type="button" class="btn btn-outline-primary">Primary</button>
+            </div>
+          </div>
+              
+        </div>
+
+    </div>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
+
   </html>
