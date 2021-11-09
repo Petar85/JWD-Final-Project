@@ -11,9 +11,10 @@ h1 {
     font-weight: 500;
     text-align: center;
     background-color: rgba(22, 250, 174, 0.25);
+    background-image: url(assets/stars-star-gazing.gif);
     background-size: auto;
     border-radius: 30px;
-    opacity: .74;
+    opacity: .9;
     display: inline-block;
     padding: 0 50px;
 
