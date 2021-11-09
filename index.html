@@ -13,16 +13,19 @@
     <div class="container">
         <div class="header">
           <!-- Just an image -->
-              <nav class="navbar navbar-light bg-light">
+              <nav class="navbar navbar-light bg-light ">
                 <a class="navbar-brand" href="#">
-                  <img src="/assets/GenerationLogo.png" width="30px" height="30px" alt="">
+                  <img src="/assets/GenerationLogo.png" width="100px" height="35px" alt="">
                 </a>
-                <ul>
-                  <li class="nav-item"><a href="about-us.html">About us</a></li>
+
+               
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item text-left"><a href="about-us.html">About us</a></li>
+
                 </ul>
               </nav>
           <div class="jumbotron">
-            <h1 class="display-3">Task  Planner</h1>
+            <h1 class="display-3">Task Planner</h1>
             <p class="lead">This is a simple task planner created by using Bootstrap and Javascript</p>
             <!-- <hr class="my-4"> -->
           </div>
@@ -35,7 +38,7 @@
           </div>
           <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" class="form-control" id="description" placeholder="Description">
+            <textarea class="form-control" id="description" placeholder="Description" rows="5"></textarea>
           </div>
           <div class="form-group">
             <label for="assignedTo">Assigned To: </label>
@@ -43,75 +46,116 @@
           </div>
           <div class="form-group">
             <label for="dueDate">Due Date</label>
-            <input type="text" class="form-control" id="dueDate" placeholder="Due Date">
+            <input type="date" class="form-control" id="dueDate" placeholder="Due Date">
           </div>
-          <div class="form-group">
-            <label for="status">Status</label>
-            <input type="text" class="form-control" id="status" placeholder="Status">
+          <div class="form-group status">
+            <div class="input-group mb-3">
+              <div class=" input-group-prepend">
+                <button class="btn btn-outline-secondary text-warning" type="button">In Progress</button>
+                <button class="btn btn-outline-secondary text-success" type="button">Done</button>
+                <button class="btn btn-outline-secondary text-danger" type="button">Unfinished</button>
+              </div>
+              <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+            </div>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
-        <!-- Card Section -->
+        <!-- Card Grid -->
+  <section id="circle-grid">
+    <div class="row">
+      <div class="col">
+        <div class="card">
 
-        <!-- Card 1 -->
-        <div class="card-tasks">
-          <h1 class="display-4"></h1>      
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Task 1</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card One</h6>
-              <p class="card-text">Example text to build on the card title.</p>
-              <span class="badge badge-pill badge-success">Success</span>
-              <button type="button" class="btn btn-outline-primary">Primary</button>
-            </div>
-          </div>
+        </div>       
+      </div>
+    </div>
+    <br>
 
-          <!-- Card 2 -->
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Task 2</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card Two</h6>
-              <p class="card-text">Example text to build on the card title..</p>
-              <span class="badge badge-pill badge-success">Success</span>
-              <button type="button" class="btn btn-outline-primary">Primary</button>
-            </div>
-          </div>
 
-          <!-- Card 3 -->
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Task 3</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card Three</h6>
-              <p class="card-text">Example text to build on the card title..</p>
-              <span class="badge badge-pill badge-success">Success</span>
-              <button type="button" class="btn btn-outline-primary">Primary</button>
-            </div>
+    <div class="row align-items-center">
+      <div class="col"> 
+        <h1 class="display-4"></h1>      
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 1</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card One</h6>
+            <p class="card-text">Example text to build on the card title.</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
           </div>
+        </div> 
+      </div>
+    </div>
+    <br>
 
-          <!-- Card 4 -->
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Task 4</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card Four</h6>
-              <p class="card-text">Example text to build on the card title..</p>
-              <span class="badge badge-pill badge-success">Success</span>
-              <button type="button" class="btn btn-outline-primary">Primary</button>
-            </div>
+    <div class="row align-items-center">
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 2</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Two</h6>
+            <p class="card-text">Example text to build on the card title..</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
           </div>
-
-          <!-- Card 5 -->
-          <div class="card" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">Task 5</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card Five</h6>
-              <p class="card-text">Example text to build on the card title..</p>
-              <span class="badge badge-pill badge-success">Success</span>
-              <button type="button" class="btn btn-outline-primary">Primary</button>
-            </div>
-          </div>
-              
         </div>
+      </div>
+      <br>
+
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 3</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Three</h6>
+            <p class="card-text">Example text to build on the card title..</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row align-items-end">
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 4</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Four</h6>
+            <p class="card-text">Example text to build on the card title..</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 5</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Five</h6>
+            <p class="card-text">Example text to build on the card title..</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <div class="card">
+
+        </div>       
+      </div>
+    </div>
+
+  </section>
+
+  <br>
 
     </div>
     
