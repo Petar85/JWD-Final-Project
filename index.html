@@ -45,9 +45,15 @@
             <label for="dueDate">Due Date</label>
             <input type="date" class="form-control" id="dueDate" placeholder="Due Date">
           </div>
-          <div class="form-group">
-            <label for="status">Status</label>
-            <input type="text" class="form-control" id="status" placeholder="Status">
+          <div class="form-group status">
+            <div class="input-group mb-3">
+              <div class=" input-group-prepend">
+                <button class="btn btn-outline-secondary text-warning" type="button">In Progress</button>
+                <button class="btn btn-outline-secondary text-success" type="button">Done</button>
+                <button class="btn btn-outline-secondary text-danger" type="button">Unfinished</button>
+              </div>
+              <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+            </div>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
