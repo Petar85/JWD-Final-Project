@@ -18,7 +18,10 @@ html {
     color: black;
     border-radius: 0;
     border-bottom: 10px solid black;
-    /*background-image: url(assets/notepad.jpg);*/
+    background: url(assets/notepad.jpg);
+    background-size: 100% auto;
+    opacity: 0.8;
+    
 
 }
 
