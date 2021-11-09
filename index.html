@@ -5,86 +5,56 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Task Planner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <!-- Should have one container a page (Bootstrap)-->
     <div class="container">
-
-      <!-- Jumbotron Header -->
-      <!--
-      <div class="jumbotron">
-        <h1 class="display-4">Task Planner</h1>
-      </div>
-      -->
-
-      <!-- Empty row -->
-      <div class="row">
-        <div class="col-1 ml-0">
-        </div>
-        <div class="col-1"></div>
-        </div>
-
-      <!-- Task Planner Information (Name, description, assigned, date)-->
-      </div>
-      <div class="row">
-        <div class="col-1 ml-0">
-          <label for="username"><span class="planner-text">Name:</span></label>
-        </div>
-        <div class="col-1"></div>
-          <input type="text" name="planner" id="username">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1">
-          <label for="description"><span class="planner-text">Description:</span></label>
-        </div>
-        <div class="col-1"></div>
-          <input type="text" name="planner" id="description">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1">
-          <label for="assigned-to"><span class="planner-text">Assigned To:</span></label>
-        </div>
-        <div class="col-1"></div>
-          <input type="text" name="planner" id="assigned-to">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-1">
-          <label for="due-date"></label><span class="planner-text">Date:</label>
-        </div>
-        <div class="col-1"></div>
-          <input type="date" name="planner" id="due-date">
-        </div>
-
-      </div>
-      <!-- Task Planner Submit button -->
-      <div class="row ml-1">
-        <input type="submit" id="form">
-      </div>
-
-      <!-- Cards -->
-      <!--
-      <div class="row">
-        <div class="card m-5" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+        <div class="header">
+          <!-- Just an image -->
+              <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                  <img src="/assets/GenerationLogo.png" alt="">
+                </a>
+              </nav>
+          <div class="jumbotron">
+            <h1 class="display-4">Task  Planner</h1>
+            <p class="lead">This is a simple task planner created by using Bootstrap and Javascript</p>
+            <!-- <hr class="my-4"> -->
           </div>
-        </div>
-      </div>
-      -->
-      
-    </div>
 
-    <!-- Boostrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        </div>
+        <form>
+          <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Description</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Description">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Assigned To: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Assigned To:">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Due Date</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Due Date">
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Status</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Status">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
 
