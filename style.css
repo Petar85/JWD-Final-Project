@@ -17,8 +17,26 @@ color: aqua;
 text-shadow: 2px 1px blueviolet;
 }
 
+
 h6 {
 text-shadow: 3px 3px 2px rgba(255, 0, 0, 0.479);
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+    background: url(assets/notepad.jpg);
+    background-size: 100% auto;
+    opacity: 0.8;
+    
+
+}
+
+.btn btn-primary {
+    align-items: center;
+
 }
 
 #circle-grid {
