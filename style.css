@@ -1,15 +1,15 @@
-
-
-span.planner-text {
-    /*background-image: linear-gradient(to left, violet, indigo, green, blue, yellow, orange, red);
-*/
-
+html {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
-    text-align: center;
+/* Card section */
+.card {
+    background-image: linear-gradient(to left, yellow, orange);
+    color: rgb(3, 3, 106);
+    border: solid 1px;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 0px 3px 8px 5px;
 }
 
-.jumbotron {
-    background-color: blue;
-}
+
