@@ -3,13 +3,34 @@ html {
 }
 
 /* Card section */
-.card {
-    background-image: linear-gradient(to left, yellow, orange);
-    color: rgb(3, 3, 106);
-    border: solid 1px;
-    border-radius: 5px;
-    margin: 5px;
-    padding: 0px 3px 8px 5px;
+
+h1 {
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #ff3300f8;
+    font-weight: 500;
+    text-align: center;
+    background-color: rgba(22, 250, 174, 0.25);
+    background-image: url(assets/stars-star-gazing.gif);
+    background-size: auto;
+    border-radius: 30px;
+    opacity: .9;
+    display: inline-block;
+    padding: 0 50px;
+
+    
+}
+
+h5 {
+color: aqua;
+text-shadow: 2px 1px blueviolet;
+}
+
+
+h6 {
+text-shadow: 3px 3px 2px rgba(255, 0, 0, 0.479);
+}
+
 }
 
 .jumbotron {
@@ -21,11 +42,28 @@ html {
     background: url(assets/notepad.jpg);
     background-size: 100% auto;
     opacity: 0.8;
-    
-
 }
+
 
 .btn btn-primary {
     align-items: center;
+
 }
 
+#circle-grid {
+    margin-top: 12px;
+}
+
+.card {
+background-image: linear-gradient(to left, yellow, orange);
+color: rgb(3, 3, 106);
+border: solid 1px;
+border-radius: 5px;
+margin: 8px 5px 10px 5px;
+padding: 0px 3px 8px 5px;
+}
+
+#circle-grid {
+background-image: linear-gradient(to top, #0000ff, #00CCFF);
+align-items: center;
+}
