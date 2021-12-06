@@ -30,6 +30,8 @@ h6 {
     text-shadow: 2px 2px 2px rgba(255, 102, 0, 0.794);
 }
 
+
+
 .jumbotron {
     text-align: center;
     background-color: transparent;
@@ -43,7 +45,7 @@ h6 {
 
 
 .btn btn-primary {
-    align-items: center;
+    text-align: center;
 
 }
 
@@ -58,6 +60,7 @@ border: solid 1px;
 border-radius: 5px;
 margin: 8px 5px 10px 5px;
 padding: 0px 3px 8px 5px;
+display: hidden;
 }
 
 #circle-grid {
