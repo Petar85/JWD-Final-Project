@@ -22,13 +22,12 @@ h1 {
 }
 
 h5 {
-color: aqua;
-text-shadow: 2px 1px blueviolet;
+color: rgba(68, 30, 110, 0.801);
+text-shadow: 1px 1px rgb(156, 99, 209);
 }
 
-
 h6 {
-text-shadow: 3px 3px 2px rgba(255, 0, 0, 0.479);
+    text-shadow: 2px 2px 2px rgba(255, 102, 0, 0.794);
 }
 
 .jumbotron {
