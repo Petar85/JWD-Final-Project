@@ -21,8 +21,7 @@ class TaskManager {
     this.currentID = this.currentID + 1;
   }
 
-  addTask('john', 'wash red and blue clothing', 'do laundry', 
-  'jan 14')
+
 
 // End of TaskManager Class
 }
