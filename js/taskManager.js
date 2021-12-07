@@ -16,6 +16,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status) {
   </div>
   <br>`
   return htmlForTask;
+// End of htmlForTask();
 }
 
 class TaskManager {
@@ -36,14 +37,29 @@ class TaskManager {
       dueDate: dueDate,
       status: 'TODO',
       id: this.currentID + 1,
+    // End of task
     };
     this.tasks.push(task);
+  // End of addTask();
+  }
+
+  render() {
+    let tasksHtmlList = [];
+    for (let taskNumber = 0; taskNumber < TaskManager.tasks.length; taskNumber++) {
+      let currentTask = TaskManager.tasks[taskNumber];
+      let date = new Date(currentTask.dueDate);
+      let formattedDate = `Due date: ${date}`;
+      let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status);
+      tasksHtmlList.push(taskHtml);
+    }
+    let tasksHtml = tasksHtmlList.join('\n');
+    document.getElementById("cardList").innerHTML(taskHtml);
   }
 
 // End of TaskManager Class
 }
 
-// Task 4 Testing
+// //Task 4 Testing
 // let task1 = new TaskManager(1);
 // task1.addTask('john', 'wash clothes', 'dwladjad', 'jan14');
 // console.log(task1.tasks);
@@ -51,3 +67,11 @@ class TaskManager {
 //Task 5 Testing
 let taskHtml = createTaskHtml('John', 'laundry', 'unknown', 'wednesday', 'in progress');
 console.log(taskHtml);
+
+let taskMan = new TaskManager(0);
+taskMan.addTask('TIm', 'Laundry', 'Himself', 'October 13', 'In progress');
+// console.log(taskMan.tasks);
+
+let submitButton = document.getElementById("submitButton");
+submitButton.addEventListener("submit", addTask());
+TaskManager.render();
