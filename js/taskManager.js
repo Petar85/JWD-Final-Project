@@ -1,27 +1,28 @@
 class TaskManager {
-  constructor(currentID = 0) {
-    this.tasks = {
+  constructor(currentID) {
+    this.tasks = [];
 
-    // End of this.tasks
-    }
-    this.currentID = currentID;
+    this.currentID = 0;
     
-
-
   // End of constructor
   }
 
   // name is the title of the description
-  addTask(name, description, assignedTo, dueDate, status = 'TODO') {
-    this.name = name;
-    this.description = description;
-    this.assignedTo = assignedTo;
-    this.dueDate = dueDate;
-    this.status = status;
-    this.currentID = this.currentID + 1;
+  addTask(name, description, assignedTo, dueDate) {
+    const task = {
+      name: name,
+      description: description,
+      assignedTo: assignedTo,
+      dueDate: dueDate,
+      status: 'TODO',
+      id: this.currentID + 1,
+    };
+    this.tasks.push(task);
   }
-
-
 
 // End of TaskManager Class
 }
+
+let task1 = new TaskManager(1);
+task1.addTask('john', 'wash clothes', 'dwladjad', 'jan14');
+console.log(task1.tasks);
