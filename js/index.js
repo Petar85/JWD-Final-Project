@@ -42,7 +42,7 @@ submitButton.addEventListener("click", () => {
     let assignedTo = document.getElementById('assignedTo').value;
     let dueDate = document.getElementById('dueDate').value;
 
-    taskMan.addTask(name, description, assignedTo, dueDate);
+    taskMan.addTask(name, description, assignedTo, dueDate, "defaultStatus");
 
     taskMan.render();
 });

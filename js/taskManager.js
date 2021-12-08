@@ -65,7 +65,7 @@ class TaskManager {
 
     console.log(`This is the task HTML List ${tasksHtmlList}`);
     let tasksHtml = tasksHtmlList.join('\n');
-    const cardText = document.getElementsByClassName("card-text");
+    const cardText = document.getElementById("cardList");
     cardText.innerHTML = tasksHtml;
     
   }
