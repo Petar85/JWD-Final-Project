@@ -23,8 +23,9 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
 class TaskManager {
   constructor(currentID) {
     this.tasks = [];
-
+    console.log(this.tasks)
     this.currentID = 0;
+    this.currentID = currentID;
     
   // End of constructor
   }
@@ -43,6 +44,7 @@ class TaskManager {
     this.currentID++;
     this.tasks.push(task);
   // End of addTask();
+    console.log(task);
   }
 
   render() {
@@ -54,11 +56,13 @@ class TaskManager {
       let formattedDate = `Due Date: ${date}`;
       let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status, taskNumber+1); 
       tasksHtmlList.push(taskHtml);
+      console.log(taskHtml);
     }
     console.log(`This is the task HTML List ${tasksHtmlList}`);
     let tasksHtml = tasksHtmlList.join('\n');
-    const cardList = document.getElementById("cardList");
-    cardList.innerHTML = tasksHtml;
+    const cardText = document.getElementsByClassName("card-text");
+    cardText.textContent = tasksHtml;
+    
   }
 
 // End of TaskManager Class
