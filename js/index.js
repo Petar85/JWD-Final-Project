@@ -27,19 +27,24 @@ taskMan.addTask('Generation', 'Graduate the Generation class.', 'Students', 'Dec
 // console.log("Length of the task: "  + taskMan.tasks.legnth);
 // taskMan.render();
 
-const taskForm = document.getElementById("cardList");
-const submitButton2 = document.getElementById("submitButton2");
-const theStartButton = document.getElementById("TheStartButton");
+// const taskForm = document.getElementById("cardList");
+// const submitButton2 = document.getElementById("submitButton2");
+// const theStartButton = document.getElementById("TheStartButton");
 
 // // Submit Button
 let submitButton = document.getElementById("submitButton");
-theStartButton.addEventListener("click", () => {
+
+submitButton.addEventListener("click", () => {
+    event.preventDefault();
     // // Grabs the user's inputs from the form
     let name = document.getElementById('name').value;
     let description = document.getElementById('description').value;
     let assignedTo = document.getElementById('assignedTo').value;
     let dueDate = document.getElementById('dueDate').value;
+
     taskMan.addTask(name, description, assignedTo, dueDate);
+
+    taskMan.render();
 });
 console.log(`Current list of tasks: ${taskMan.tasks}`);
-taskMan.render();
+

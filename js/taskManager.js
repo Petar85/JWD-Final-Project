@@ -23,8 +23,9 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
 class TaskManager {
   constructor(currentID) {
     this.tasks = [];
-
+    console.log(this.tasks)
     this.currentID = 0;
+    this.currentID = currentID;
     
   // End of constructor
   }
@@ -44,30 +45,35 @@ class TaskManager {
     this.currentID++;
     this.tasks.push(task);
   // End of addTask();
+    console.log(task);
   }
 
   render() {
     let tasksHtmlList = [];
+
     for (let taskNumber = 0; taskNumber < this.tasks.length; taskNumber++) {
       let currentTask = this.tasks[taskNumber];
+      // Code below did not work, sets year to 2001
       // let date = new Date(currentTask.dueDate);
       let date = currentTask.dueDate;
       let formattedDate = `Due date: ${date}`;
       let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status, taskNumber+1); 
+      
       tasksHtmlList.push(taskHtml);
+      console.log(taskHtml);
     }
+
     console.log(`This is the task HTML List ${tasksHtmlList}`);
     let tasksHtml = tasksHtmlList.join('\n');
-    console.log(`1234 : ${tasksHtml}`);
-    const cardList = document.getElementById("cardList");
-    cardList.innerHTML = tasksHtml;
+    const cardText = document.getElementsByClassName("card-text");
+    cardText.innerHTML = tasksHtml;
+    
   }
 
 // End of TaskManager Class
 }
 
-// TESTING:
-
+// TEST:
 // //Task 4 Testing
   // This will create a new task, and save it into an array of tasks
 // let task1 = new TaskManager(1);
