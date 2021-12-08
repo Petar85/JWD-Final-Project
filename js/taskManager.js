@@ -53,7 +53,7 @@ class TaskManager {
       let currentTask = this.tasks[taskNumber];
       let date = new Date(currentTask.dueDate);
       let formattedDate = `Due date: ${date}`;
-      let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status); 
+      let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status, taskNumber+1); 
       tasksHtmlList.push(taskHtml);
       console.log(taskHtml);
     }
