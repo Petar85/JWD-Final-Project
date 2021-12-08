@@ -73,23 +73,23 @@ class TaskManager {
 // let taskHtml = createTaskHtml('John', 'laundry', 'unknown', 'wednesday', 'in progress');
 // console.log(taskHtml);
 
-let taskMan = new TaskManager(0);
-console.log("Length of the task: "  + taskMan.tasks.legnth);
-taskMan.addTask('Tim', 'Laundry', 'Himself', 'October 13', 'In progress');
-taskMan.addTask('John', 'laundry', 'unknown', 'wednesday', 'in progress');
-console.log(taskMan.tasks);
-console.log("Length of the task: "  + taskMan.tasks.legnth);
-taskMan.render();
+// let taskMan = new TaskManager(0);
+// console.log("Length of the task: "  + taskMan.tasks.legnth);
+// taskMan.addTask('Tim', 'Laundry', 'Himself', 'October 13', 'In progress');
+// taskMan.addTask('John', 'laundry', 'unknown', 'wednesday', 'in progress');
+// console.log(taskMan.tasks);
+// console.log("Length of the task: "  + taskMan.tasks.legnth);
 // taskMan.render();
+// // taskMan.render();
 
-// // grab user inputs
-let name = document.getElementById('name').value;
-let description = document.getElementById('description').value;
-let assignedTo = document.getElementById('assignedTo').value;
-let dueDate = document.getElementById('dueDate').value;
-// let button = document.getElementById('button').value;
+// // // grab user inputs
+// let name = document.getElementById('name').value;
+// let description = document.getElementById('description').value;
+// let assignedTo = document.getElementById('assignedTo').value;
+// let dueDate = document.getElementById('dueDate').value;
+// // let button = document.getElementById('button').value;
 
-// // Submit Button
-let submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("click", taskMan.addTask(name, description, assignedTo, dueDate));
-taskMan.render();
+// // // Submit Button
+// let submitButton = document.getElementById("submitButton");
+// submitButton.addEventListener("click", taskMan.addTask(name, description, assignedTo, dueDate));
+// taskMan.render();
