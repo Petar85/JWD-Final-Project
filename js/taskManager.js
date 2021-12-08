@@ -56,6 +56,7 @@ class TaskManager {
     }
     console.log(`This is the task HTML List ${tasksHtmlList}`);
     let tasksHtml = tasksHtmlList.join('\n');
+    console.log(`1234 : ${tasksHtml}`);
     const cardList = document.getElementById("cardList");
     cardList.innerHTML = tasksHtml;
   }
