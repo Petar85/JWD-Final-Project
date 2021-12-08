@@ -30,13 +30,13 @@ class TaskManager {
   }
 
   // This will add a single task [to the list of tasks]
-  addTask(name, description, assignedTo, dueDate) {
+  addTask(name, description, assignedTo, dueDate, status) {
     const task = {
       name: name,
       description: description,
       assignedTo: assignedTo,
       dueDate: dueDate,
-      status: 'TODO',
+      status: status,
       id: this.currentID,
     // End of task
     };
@@ -55,12 +55,12 @@ class TaskManager {
       tasksHtmlList.push(taskHtml);
     }
     let tasksHtml = tasksHtmlList.join('\n');
-    document.getElementById("cardList").innerHTML(tasksHtml);
+    const cardList = document.getElementById("cardList");
+    cardList.innerHTML = tasksHtml;
   }
 
 // End of TaskManager Class
 }
-
 
 // TESTING:
 
@@ -83,13 +83,13 @@ taskMan.render();
 // taskMan.render();
 
 // // grab user inputs
-// let name = document.querySelector('name');
-// let description = document.querySelector('description');
-// let assignedTo = document.querySelector('assignedTo');
-// let dueDate = document.querySelector('dueDate');
-// let button = document.querySelector('button');
+let name = document.getElementById('name').value;
+let description = document.getElementById('description').value;
+let assignedTo = document.getElementById('assignedTo').value;
+let dueDate = document.getElementById('dueDate').value;
+// let button = document.getElementById('button').value;
 
 // // Submit Button
-// let submitButton = document.querySelector("submitButton");
-// submitButton.addEventListener("click", addTask(name, description, assignedTo, dueDate));
-// taskHtml.render();
+let submitButton = document.getElementById("submitButton");
+submitButton.addEventListener("click", taskMan.addTask(name, description, assignedTo, dueDate));
+taskMan.render();
