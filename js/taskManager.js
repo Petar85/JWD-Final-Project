@@ -22,56 +22,91 @@ function createTaskHtml(name, description, assignedTo, dueDate, status) {
 class TaskManager {
   constructor(currentID) {
     this.tasks = [];
-
+    console.log(this.tasks)
     this.currentID = 0;
+    this.currentID = currentID;
     
   // End of constructor
   }
 
   // name is the title of the description
-  addTask(name, description, assignedTo, dueDate) {
+  addTask(name, description, assignedTo, dueDate, status,) {
     const task = {
       name: name,
       description: description,
       assignedTo: assignedTo,
       dueDate: dueDate,
-      status: 'TODO',
-      id: this.currentID + 1,
+      status: status,
+      currentId: currentId++,
     // End of task
     };
     this.tasks.push(task);
   // End of addTask();
+    console.log(task);
   }
 
   render() {
     let tasksHtmlList = [];
-    for (let taskNumber = 0; taskNumber < TaskManager.tasks.length; taskNumber++) {
-      let currentTask = TaskManager.tasks[taskNumber];
+    for (let taskNumber = 0; taskNumber < this.tasks.length; taskNumber++) {
+      let currentTask = this.tasks[taskNumber];
       let date = new Date(currentTask.dueDate);
       let formattedDate = `Due date: ${date}`;
       let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status);
       tasksHtmlList.push(taskHtml);
+      console.log(taskHtml);
     }
     let tasksHtml = tasksHtmlList.join('\n');
-    document.getElementById("cardList").innerHTML(taskHtml);
+    const cardText = document.getElementsByClassName("card-text");
+    cardText.textContent = tasksHtml;
+    
   }
 
 // End of TaskManager Class
 }
 
-// //Task 4 Testing
-// let task1 = new TaskManager(1);
-// task1.addTask('john', 'wash clothes', 'dwladjad', 'jan14');
-// console.log(task1.tasks);
+// Task 4 Testing
+let task1 = new TaskManager(1);
+task1.addTask('john', 'wash clothes', 'dwladjad', 'jan14');
+console.log(task1.tasks);
 
-//Task 5 Testing
+// Task 5 Testing
 let taskHtml = createTaskHtml('John', 'laundry', 'unknown', 'wednesday', 'in progress');
 console.log(taskHtml);
 
 let taskMan = new TaskManager(0);
+console.log("Length of the task: "  + taskMan.tasks.length);
+taskMan.addTask('Tim', 'Laundry', 'Himself', 'October 13', 'In progress');
+taskMan.addTask('John', 'laundry', 'unknown', 'wednesday', 'in progress');
+console.log(taskMan.tasks);
+console.log("Length of the task: "  + taskMan.tasks.length);
+taskMan.render();
+// taskMan.render();
+
+// // grab user inputs
+let name = document.getElementById('name').value;
+let description = document.getElementById('description').value;
+let assignedTo = document.getElementById('assignedTo').value;
+let dueDate = document.getElementById('dueDate').value;
+// let button = document.getElementById('button').value;
+
+// // Submit Button
+let submitButton = document.getElementById("submitButton");
+submitButton.addEventListener("click", taskMan.addTask(name, description, assignedTo, dueDate, status));
+taskMan.render();
+
+//Task 4 Testing
+let task1 = new TaskManager(1);
+task1.addTask('john', 'wash clothes', 'dwladjad', 'jan14');
+console.log(task1.tasks);
+
+// Task 5 Testing
+let taskHtml = createTaskHtml('John', 'laundry', 'unknown', 'wednesday', 'in progress');
+console.log(taskHtml);
+
+let taskMan = new TaskManager;
 taskMan.addTask('TIm', 'Laundry', 'Himself', 'October 13', 'In progress');
-// console.log(taskMan.tasks);
+console.log(taskMan.tasks);
 
 let submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("submit", addTask());
-TaskManager.render();
+submitButton.addEventListener("click", addTask());
+taskMan.render();
