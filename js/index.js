@@ -11,7 +11,7 @@
 // let taskHtml = createTaskHtml('John', 'laundry', 'unknown', 'wednesday', 'in progress');
 // console.log(`Prints task HTML: ${taskHtml}`);
 
-// Hard codeed tasks in
+// Hard coded tasks in
 // Creates a new TaskManager class, that includes a list of tasks
 let taskMan = new TaskManager(0);
 // //0 Tasks because no tasks were added yet
