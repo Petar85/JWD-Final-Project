@@ -34,7 +34,7 @@ taskMan.addTask('Generation', 'Graduate the Generation class.', 'Students', 'Dec
 // // Submit Button
 let submitButton = document.getElementById("submitButton");
 
-submitButton.addEventListener("click", () => {
+submitButton.addEventListener("click", (event) => {
     event.preventDefault();
     // // Grabs the user's inputs from the form
     let name = document.getElementById('name').value;
@@ -42,9 +42,20 @@ submitButton.addEventListener("click", () => {
     let assignedTo = document.getElementById('assignedTo').value;
     let dueDate = document.getElementById('dueDate').value;
 
-    taskMan.addTask(name, description, assignedTo, dueDate, "defaultStatus");
+    taskMan.addTask(name, description, assignedTo, dueDate, "In Progress");
 
-    taskMan.render();
+    if (name == '') {
+        alert("Please put a name");
+    } else if(description == '') {
+        alert("Please put a description");
+    } else if(assignedTo == '') {
+        alert("Please put a assigned to");
+    } else if(dueDate == '') {
+        alert("Please put the task's due date");
+    } else {
+        taskMan.render();
+    }
+    
 });
 console.log(`Current list of tasks: ${taskMan.tasks}`);
 
