@@ -16,11 +16,11 @@
 let taskMan = new TaskManager(0);
 // //0 Tasks because no tasks were added yet
 // console.log("Length of the task: "  + taskMan.tasks.legnth);
-taskMan.addTask('Dusting', 'Dust off the desk.', 'Lisa', 'Dec 13', 'In progress');
-taskMan.addTask('Laundry', 'Fold the clean clothes.', 'John', 'Dec 14', 'In progress');
-taskMan.addTask('Dishes', 'Load the dishwasher.', 'Kate', 'Dec 15', 'In progress');
-taskMan.addTask('Floor', 'Mop and vacum the floors.', 'Bobby', 'Dec 16', 'In progress');
-taskMan.addTask('Generation', 'Graduate the Generation class.', 'Students', 'Dec 17', 'In progress');
+// taskMan.addTask('Dusting', 'Dust off the desk.', 'Lisa', 'Dec 13', 'In progress');
+// taskMan.addTask('Laundry', 'Fold the clean clothes.', 'John', 'Dec 14', 'In progress');
+// taskMan.addTask('Dishes', 'Load the dishwasher.', 'Kate', 'Dec 15', 'In progress');
+// taskMan.addTask('Floor', 'Mop and vacum the floors.', 'Bobby', 'Dec 16', 'In progress');
+// taskMan.addTask('Generation', 'Graduate the Generation class.', 'Students', 'Dec 17', 'In progress');
 // // 5 Tasks because 5 tasks were added
 // console.log(taskMan.tasks);
 
@@ -42,20 +42,33 @@ submitButton.addEventListener("click", (event) => {
     let assignedTo = document.getElementById('assignedTo').value;
     let dueDate = document.getElementById('dueDate').value;
 
-    taskMan.addTask(name, description, assignedTo, dueDate, "In Progress");
+    let inputArray = [name, description, assignedTo, dueDate];
 
-    if (name == '') {
-        alert("Please put a name");
-    } else if(description == '') {
-        alert("Please put a description");
-    } else if(assignedTo == '') {
-        alert("Please put a assigned to");
-    } else if(dueDate == '') {
-        alert("Please put the task's due date");
-    } else {
+
+    let isValidForm = true;
+    let loopNumber = 0;
+    do {
+        if (inputArray[loopNumber] === '') {
+            const html = `<div class="alert alert-danger" role="alert">
+            Please fill out this form
+            </div>`;
+            document.getElementById('submitAlert').innerHTML = html;
+            isValidForm = false;
+            break;
+        }
+        loopNumber++;
+    } 
+    while (loopNumber < inputArray.length);
+
+    if (isValidForm) {
+        taskMan.addTask(name, description, assignedTo, dueDate, "In Progress");
         taskMan.render();
+        document.getElementById('submitAlert').innerHTML = '';
     }
+
+    
+    
     
 });
-console.log(`Current list of tasks: ${taskMan.tasks}`);
+// console.log(`Current list of tasks: ${taskMan.tasks}`);
 
