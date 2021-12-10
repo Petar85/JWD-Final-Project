@@ -23,17 +23,23 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
 
 // TaskManager class
 class TaskManager {
+  // The constructor: holds information that the TaskManager needs.
   constructor(currentID) {
+    // This will contain ALL of the tasks
     this.tasks = [];
-    console.log(this.tasks)
+    
+    // The id will identify each task to a number.
     this.currentID = 0;
     this.currentID = currentID;
     
   // End of constructor
   }
 
+
   // This will add a single task [to the list of tasks in the constructor]
   addTask(name, description, assignedTo, dueDate, status) {
+    
+    // Creates a task object
     const task = {
       name: name,
       description: description,
@@ -44,10 +50,15 @@ class TaskManager {
 
     // End of task
     };
+
+    // Increment the ID (So that the next task will not have
+    // the same ID as the previous task)
     this.currentID++;
+
+    // Push the task to the list of tasks in the constructor
     this.tasks.push(task);
+
   // End of addTask();
-    console.log(task);
   }
 
   // The render() method takes the tasks from the TaskManager constructor,
@@ -75,11 +86,3 @@ class TaskManager {
 
 // End of TaskManager Class
 }
-
-// TEST:
-// //Task 4 Testing
-  // This will create a new task, and save it into an array of tasks
-// let task1 = new TaskManager(1);
-// task1.addTask('john', 'wash clothes', 'dwladjad', 'jan14');
-// console.log(task1.tasks);
-
