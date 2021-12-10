@@ -49,7 +49,7 @@ submitButton.addEventListener("click", (event) => {
     } else if(description == '') {
         alert("Please put a description");
     } else if(assignedTo == '') {
-        alert("Please put a assigned to");
+        alert("Please put who it's assigned to");
     } else if(dueDate == '') {
         alert("Please put the task's due date");
     } else {
