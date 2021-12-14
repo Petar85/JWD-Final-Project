@@ -3,7 +3,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
   
   // Template to create a single task in HTML code.
   const html =   
-  `<div class="row align-items-center">
+  `<div class="row align-items-center" data-task-id=${id}>
     <div class="col"> 
       <h1 class="display-4"></h1>      
       <div class="card mx-auto" style="width: 18rem;">
@@ -11,9 +11,9 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
           <h5 class="card-title">Task Number ${id}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${name}</h6>
           <p class="card-text"><b>Description:</b> ${description}<br><b>Assigned To:</b> ${assignedTo}</p>
-          <span class="badge badge-pill badge-success">${status}</span>
+          <span class="badge badge-pill ${status === 'In Progress' ? 'badge-danger' : 'badge-success'}">${status}</span>
           <button type="button" class="btn btn-outline-primary">${dueDate}</button>
-          <button type="button" class="btn btn-success done-button">Mark As Done</button>
+          <button type="button" class="btn btn-success done-button ${status === 'In Progress' ? 'visible' : 'invisible'}">Mark As Done</button>
         </div>
       </div> 
     </div>
@@ -41,6 +41,51 @@ class TaskManager {
   //End of constructor
   }
 
+  // Finds a task by their id
+  getTaskById(taskId) {
+    // Predetermined variable that will grab the correct task. (Empty for now)
+    let foundTask;
+
+    // For loop to iterate over every task in this.tasks
+    for (let i = 0; i < this.tasks.length; i++) {
+      // Grab a singular task
+      let task = this.tasks[i];
+      // If the id matches, get the task
+      if (task.id === taskId) {
+        foundTask = task;
+      }
+    }
+    // Return the found task
+    return foundTask;
+  }
+
+  // This method that saves tasks into the computer's local storage
+  save() {
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem('tasks', tasksJson);
+    const currentId = String(this.currentID);
+    localStorage.setItem('currentId', currentId);
+  }
+
+  // This method loads saved tasks (from local storage) onto the browser
+  load() {
+    // Check for any saved tasks
+    if (localStorage.getItem('tasks')) {
+      // Get the JSON string of tasks in localStorage
+      const tasksJson = localStorage.getItem('tasks');
+
+      // Convert it to an array and store it in our TaskManager
+      this.tasks = JSON.parse(tasksJson);
+    }
+    // Check if the currentId is saved in localStorage
+    if (localStorage.getItem('currentId')) {
+      // Get the currentId string in localStorage
+      const currentId = localStorage.getItem('currentId');
+
+      // Convert the currentId to a number and store it in our TaskManager
+      this.currentID = Number(currentId);
+    }
+  }
 
   // This will add a single task [to the list of tasks in the constructor]
   addTask(name, description, assignedTo, dueDate, status) {
@@ -86,7 +131,7 @@ class TaskManager {
       let formattedDate = `Due date: ${date}`;
 
       // Will grab a task, and turn it into HTML format.
-      let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status, taskNumber+1); 
+      let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status, currentTask.id); 
       
       // Pushes the HTML formatted task to tasksHtmlList
       tasksHtmlList.push(taskHtml);

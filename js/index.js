@@ -1,9 +1,12 @@
 // Creating a variable of the TaskManager class
 let taskMan = new TaskManager(0);
 
+// Load and render tasks (That are in the local storage)
+taskMan.load();
+taskMan.render();
 
 // Hard coded tasks (that the user did not put) (uncomment to display)
-taskMan.addTask('Dusting', 'Dust off the desk.', 'Lisa', 'Dec 13', 'In progress');
+// taskMan.addTask('Dusting', 'Dust off the desk.', 'Lisa', 'Dec 13', 'In Progress');
 // taskMan.addTask('Laundry', 'Fold the clean clothes.', 'John', 'Dec 14', 'In progress');
 // taskMan.addTask('Dishes', 'Load the dishwasher.', 'Kate', 'Dec 15', 'In progress');
 // taskMan.addTask('Floor', 'Mop and vacum the floors.', 'Bobby', 'Dec 16', 'In progress');
@@ -45,17 +48,35 @@ submitButton.addEventListener("click", (event) => {
         taskMan.addTask(name, description, assignedTo, dueDate, "In Progress");
         // Then render the page (Be able to display the task cards at the bottom of the webpage)
         taskMan.render();
+
+        // Save the task
+        taskMan.save();
     }
     
 });
 
 const cardList = document.querySelector('#cardList');
 
-
+// Task 7 Step 2 [Finding the "Mark as Done" Button]
 cardList.addEventListener('click', (event) => { // "event" here is the event parameter
     if (event.target.classList.contains('done-button')) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
-        // console.log(parentTask);
+        console.log(parentTask);
+        
+        // Will grab the id of the task you clicked "Mark as Done" on.
+        const taskId = Number(parentTask.dataset.taskId);
+        console.log(taskId);
+
+        // Will grab the task object, of that id
+        const task = taskMan.getTaskById(taskId);
+
+        // Change status
+        task.status = "Done";
+
+        // Save task to local storage
+        taskMan.save();
+        taskMan.render();
+        
     }
 });
