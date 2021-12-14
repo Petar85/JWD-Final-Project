@@ -11,9 +11,11 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
           <h5 class="card-title">Task Number ${id}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${name}</h6>
           <p class="card-text"><b>Description:</b> ${description}<br><b>Assigned To:</b> ${assignedTo}</p>
-          <span class="badge badge-pill ${status === 'In Progress' ? 'badge-danger' : 'badge-success'}">${status}</span>
           <button type="button" class="btn btn-outline-primary">${dueDate}</button>
+          <span class="badge badge-pill ${status === 'In Progress' ? 'badge-danger' : 'badge-success'}">${status}</span>
+          <br>
           <button type="button" class="btn btn-success done-button ${status === 'In Progress' ? 'visible' : 'invisible'}">Mark As Done</button>
+          <button type="button" class="btn btn-danger delete-button">Delete</button>
         </div>
       </div> 
     </div>
@@ -57,6 +59,8 @@ class TaskManager {
     }
     // Return the found task
     return foundTask;
+
+    //End of getTaskById
   }
 
   // This method that saves tasks into the computer's local storage
@@ -65,6 +69,7 @@ class TaskManager {
     localStorage.setItem('tasks', tasksJson);
     const currentId = String(this.currentID);
     localStorage.setItem('currentId', currentId);
+    //End of save()
   }
 
   // This method loads saved tasks (from local storage) onto the browser
@@ -85,6 +90,7 @@ class TaskManager {
       // Convert the currentId to a number and store it in our TaskManager
       this.currentID = Number(currentId);
     }
+    //End of load()
   }
 
   // This will add a single task [to the list of tasks in the constructor]
@@ -99,7 +105,7 @@ class TaskManager {
       status: status,
       id: this.currentID,
 
-    //End of addTask
+    //End of task
     };
 
     // Increment the ID (so that the next task will not have
@@ -110,6 +116,29 @@ class TaskManager {
     this.tasks.push(task);
 
   //End of addTask();
+  }
+
+  // Deletes a task from the list of tasks
+  deleteTask(taskId) {
+    // Creating a new list without the task we want deleted
+    const newTasks = [];
+
+    // For loop to iterate over each task.
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i]; 
+      
+      // Add the task to the new list if it doesnt
+      // have the specified 'id'
+      if (task.id !== taskId) {
+        newTasks.push(task);
+      }
+
+    }
+
+    // Set the tasks equal to the new task list. (That removes the deleted task)
+    this.tasks = newTasks;
+
+  //End of deleteTask()
   }
 
   // The render() method takes the tasks from the TaskManager constructor,

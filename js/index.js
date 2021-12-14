@@ -55,10 +55,13 @@ submitButton.addEventListener("click", (event) => {
     
 });
 
+// Getting the cardList section in HTML
 const cardList = document.querySelector('#cardList');
 
-// Task 7 Step 2 [Finding the "Mark as Done" Button]
+// Event Listeners for cardList section of HTML
 cardList.addEventListener('click', (event) => { // "event" here is the event parameter
+
+    // When the "Mark as Done" button is clicked on
     if (event.target.classList.contains('done-button')) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
@@ -77,6 +80,28 @@ cardList.addEventListener('click', (event) => { // "event" here is the event par
         // Save task to local storage
         taskMan.save();
         taskMan.render();
-        
+    //End of done-button
     }
+
+    // When the "Delete" button is clicked on
+    if (event.target.classList.contains('delete-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+        console.log(parentTask);
+        
+        // Will grab the id of the task you clicked "Delete" on.
+        const taskId = Number(parentTask.dataset.taskId);
+        console.log(taskId);
+
+        // Will delete the task
+        taskMan.deleteTask(taskId);
+
+        // Save task to local storage
+        taskMan.save();
+        taskMan.render();
+    //End of done-button
+    }
+
+//End of cardList.addEventListener
 });
+
