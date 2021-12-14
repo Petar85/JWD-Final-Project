@@ -59,6 +59,34 @@ class TaskManager {
     return foundTask;
   }
 
+  // This method that saves tasks into the computer's local storage
+  save() {
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem('tasks', tasksJson);
+    const currentId = String(this.currentID);
+    localStorage.setItem('currentId', currentId);
+  }
+
+  // This method loads saved tasks (from local storage) onto the browser
+  load() {
+    // Check for any saved tasks
+    if (localStorage.getItem('tasks')) {
+      // Get the JSON string of tasks in localStorage
+      const tasksJson = localStorage.getItem('tasks');
+
+      // Convert it to an array and store it in our TaskManager
+      this.tasks = JSON.parse(tasksJson);
+    }
+    // Check if the currentId is saved in localStorage
+    if (localStorage.getItem('currentId')) {
+      // Get the currentId string in localStorage
+      const currentId = localStorage.getItem('currentId');
+
+      // Convert the currentId to a number and store it in our TaskManager
+      this.currentID = Number(currentId);
+    }
+  }
+
   // This will add a single task [to the list of tasks in the constructor]
   addTask(name, description, assignedTo, dueDate, status) {
     
