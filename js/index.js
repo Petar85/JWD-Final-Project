@@ -48,3 +48,14 @@ submitButton.addEventListener("click", (event) => {
     }
     
 });
+
+const cardList = document.querySelector('#cardList');
+
+
+cardList.addEventListener('click', (event) => { // "event" here is the event parameter
+    if (event.target.classList.contains('done-button')) {
+        // Get the parent Task
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+        // console.log(parentTask);
+    }
+});

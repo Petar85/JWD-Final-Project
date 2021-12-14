@@ -13,15 +13,14 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
           <p class="card-text"><b>Description:</b> ${description}<br><b>Assigned To:</b> ${assignedTo}</p>
           <span class="badge badge-pill badge-success">${status}</span>
           <button type="button" class="btn btn-outline-primary">${dueDate}</button>
-          <button type="button" class="btn btn-success">Done</button>
+          <button type="button" class="btn btn-success done-button">Mark As Done</button>
         </div>
       </div> 
     </div>
   </div>
   <br>`
 
-  // The function createTaskHtml() will return a string of a single 
-  // task in HTML code.
+  // Returns what was made in the variable 'html'
   return html;
 
 //End of createTaskHtml();
