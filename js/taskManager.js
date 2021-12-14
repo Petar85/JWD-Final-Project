@@ -11,9 +11,9 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
           <h5 class="card-title">Task Number ${id}</h5>
           <h6 class="card-subtitle mb-2 text-muted">${name}</h6>
           <p class="card-text"><b>Description:</b> ${description}<br><b>Assigned To:</b> ${assignedTo}</p>
-          <span class="badge badge-pill badge-success">${status}</span>
+          <span class="badge badge-pill ${status === 'In Progress' ? 'badge-danger' : 'badge-success'}">${status}</span>
           <button type="button" class="btn btn-outline-primary">${dueDate}</button>
-          <button type="button" class="btn btn-success done-button">Mark As Done</button>
+          <button type="button" class="btn btn-success done-button ${status === 'In Progress' ? 'visible' : 'invisible'}">Mark As Done</button>
         </div>
       </div> 
     </div>

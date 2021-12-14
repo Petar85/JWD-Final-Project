@@ -3,7 +3,7 @@ let taskMan = new TaskManager(0);
 
 
 // Hard coded tasks (that the user did not put) (uncomment to display)
-taskMan.addTask('Dusting', 'Dust off the desk.', 'Lisa', 'Dec 13', 'In progress');
+taskMan.addTask('Dusting', 'Dust off the desk.', 'Lisa', 'Dec 13', 'In Progress');
 // taskMan.addTask('Laundry', 'Fold the clean clothes.', 'John', 'Dec 14', 'In progress');
 // taskMan.addTask('Dishes', 'Load the dishwasher.', 'Kate', 'Dec 15', 'In progress');
 // taskMan.addTask('Floor', 'Mop and vacum the floors.', 'Bobby', 'Dec 16', 'In progress');
@@ -57,5 +57,15 @@ cardList.addEventListener('click', (event) => { // "event" here is the event par
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
         console.log(parentTask);
+        
+        // Will grab the id of the task you clicked "Mark as Done" on.
+        const taskId = Number(parentTask.dataset.taskId);
+        console.log(taskId);
+
+        // Will grab the task object, of that id
+        const task = taskMan.getTaskById(taskId);
+
+        task.status = "Done";
+        taskMan.render();
     }
 });
