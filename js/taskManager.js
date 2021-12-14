@@ -3,7 +3,7 @@ function createTaskHtml(name, description, assignedTo, dueDate, status, id) {
   
   // Template to create a single task in HTML code.
   const html =   
-  `<div class="row align-items-center">
+  `<div class="row align-items-center" data-task-id=${id}>
     <div class="col"> 
       <h1 class="display-4"></h1>      
       <div class="card mx-auto" style="width: 18rem;">
@@ -41,6 +41,23 @@ class TaskManager {
   //End of constructor
   }
 
+  // Finds a task by their id
+  getTaskById(taskId) {
+    // Predetermined variable that will grab the correct task. (Empty for now)
+    let foundTask;
+
+    // For loop to iterate over every task in this.tasks
+    for (let i = 0; i < this.tasks.length; i++) {
+      // Grab a singular task
+      let task = this.tasks[i];
+      // If the id matches, get the task
+      if (task.id === taskId) {
+        foundTask = task;
+      }
+    }
+    // Return the found task
+    return foundTask;
+  }
 
   // This will add a single task [to the list of tasks in the constructor]
   addTask(name, description, assignedTo, dueDate, status) {
@@ -86,7 +103,7 @@ class TaskManager {
       let formattedDate = `Due date: ${date}`;
 
       // Will grab a task, and turn it into HTML format.
-      let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status, taskNumber+1); 
+      let taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status, currentTask.id); 
       
       // Pushes the HTML formatted task to tasksHtmlList
       tasksHtmlList.push(taskHtml);

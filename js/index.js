@@ -51,11 +51,11 @@ submitButton.addEventListener("click", (event) => {
 
 const cardList = document.querySelector('#cardList');
 
-
+// Task 7 Step 2 [Finding the "Mark as Done" Button]
 cardList.addEventListener('click', (event) => { // "event" here is the event parameter
     if (event.target.classList.contains('done-button')) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
-        // console.log(parentTask);
+        console.log(parentTask);
     }
 });
