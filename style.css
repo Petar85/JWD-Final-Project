@@ -2,6 +2,10 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.navbar-brand #gen-link {
+    text-align: left;
+}
+
 /* Card section */
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
