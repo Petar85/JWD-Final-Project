@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width">
   <title>Task Planner</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="shortcut icon" href="#">
 </head>
 
 <body>
@@ -15,7 +17,7 @@
         <!-- Just an image -->
             <nav class="navbar navbar-light bg-light ">
               <a class="navbar-brand" href="#">
-                <img src="/assets/GenerationLogo.png" width="100px" height="35px" alt="">
+                <img src="./assets/GenerationLogo.png" width="100px" height="35px" alt="">
               </a>
               <ul class="navbar-nav">
                 <li class="nav-item"><a href="about-us.html">About us</a></li>
@@ -24,7 +26,8 @@
         <!-- Jumbotron -->
         <div class="jumbotron">
           <h1 class="display-3">Task Planner</h1>
-          <p class="lead">This is a simple task planner created by using Bootstrap and Javascript</p>
+          <p class="lead">This is a simple task planner created by using Bootstrap and Javascript.</p>
+          <p class="lead" id="currentDay"></p>
           <!-- <hr class="my-4"> -->
         </div>
 
@@ -35,18 +38,24 @@
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name" placeholder="Name">
         </div>
+
         <div class="form-group">
           <label for="description">Description</label>
           <textarea class="form-control" id="description" placeholder="Description" rows="5"></textarea>
         </div>
+
+        
         <div class="form-group">
           <label for="assignedTo">Assigned To: </label>
           <input type="text" class="form-control" id="assignedTo" placeholder="Assigned To:">
         </div>
+
+        
         <div class="form-group">
-          <label for="dueDate">Due Date</label>
-          <input type="date" class="form-control" id="dueDate" placeholder="Due Date">
+          <label type='date' for="dueDate">Due Date</label>
+          <input type="text" class="form-control" id="dueDate" placeholder="Due Date">
         </div>
+
         <div class="form-group status">
           <div class="input-group mb-3">
             <div class=" input-group-prepend">
@@ -57,11 +66,18 @@
             <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div id="TheStartButton">
+          <button type="submit" class="btn btn-primary" id="submitButton">Submit</button>
+        </div>
+        <div id="submitAlert">
+          
+        </div>
       </form>
 
       <!-- Card Grid -->
 <section id="circle-grid">
+  
+  <!-- Boarder (Yellow line in the webpage) -->
   <div class="row">
     <div class="col">
       <div class="card">
@@ -70,17 +86,18 @@
     </div>
   </div>
   <br>
+  <!-- End of Boarder-->
 
-
+  <div id="cardList">
   
-  <div class="row align-items-center">
+  <!-- <div class="row align-items-center">
     <div class="col"> 
       <h1 class="display-4"></h1>      
       <div class="card mx-auto" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Task 1</h5>
           <h6 class="card-subtitle mb-2 text-muted">Card One</h6>
-          <p class="card-text">Example text to build on the card title.</p>
+          <p class="card-text">Example text to build on the card title..</p>
           <span class="badge badge-pill badge-success">Success</span>
           <button type="button" class="btn btn-outline-primary">Primary</button>
         </div>
@@ -103,68 +120,88 @@
     </div>
     <br>
 
-    <div class="col">
-      <div class="card mx-auto" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Task 3</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card Three</h6>
-          <p class="card-text">Example text to build on the card title..</p>
-          <span class="badge badge-pill badge-success">Success</span>
-          <button type="button" class="btn btn-outline-primary">Primary</button>
+      <div class="row align-items-center">
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 2</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Two</h6>
+            <p class="card-text">Example text to build on the card title..</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <br>
+      <br>
 
-  <div class="row align-items-end">
-    <div class="col">
-      <div class="card mx-auto" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Task 4</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card Four</h6>
-          <p class="card-text">Example text to build on the card title..</p>
-          <span class="badge badge-pill badge-success">Success</span>
-          <button type="button" class="btn btn-outline-primary">Primary</button>
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 3</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Three</h6>
+            <p class="card-text">Example text to build on the card title..</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+          </div>
         </div>
       </div>
     </div>
     <br>
 
-    <div class="col">
-      <div class="card mx-auto" style="width: 18rem;">
-        <div class="card-body">
-          <h5 class="card-title">Task 5</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Card Five</h6>
-          <p class="card-text">Example text to build on the card title..</p>
-          <span class="badge badge-pill badge-success">Success</span>
-          <button type="button" class="btn btn-outline-primary">Primary</button>
+    <div class="row align-items-end">
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 4</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Four</h6>
+            <p class="card-text">Example text to build on the card title..</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="col">
+        <div class="card mx-auto" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Task 5</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card Five</h6>
+            <p class="card-text">Example text to build on the card title..</p>
+            <span class="badge badge-pill badge-success">Success</span>
+            <button type="button" class="btn btn-outline-primary">Primary</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <br>
+  <br> -->
 
-  <div class="row">
-    <div class="col">
-      <div class="card">
-
-      </div>       
-    </div>
   </div>
 
+  <!-- Boarder (Yellow line in the webpage) -->
+    <div class="row">
+      <div class="col">
+        <div class="card">
+
+        </div>       
+      </div>
+    </div>
+    <!-- End of Boarder -->
+  
 </section>
 
-<br>
-
-  </div>
-  
 
   
+
+  <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
   <script src="script.js"></script>
+
+  <script type="text/javascript" src="js/taskManager.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>
